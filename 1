@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Navaz - Event & Project Management Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        :root {
+            --color-soft-purple: #B39CD0; /* Primary Accent */
+            --color-soft-peach: #FFB39A; /* Secondary Accent */
+            --color-light-bg: #F8F0FB;
+            --color-card-bg: #FFFFFF;
+            --color-dark-text: #333333;
+            --color-light-text: #6a6a6a;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-light-bg);
+            color: var(--color-dark-text);
+        }
+        .accent-primary { color: var(--color-soft-purple); }
+        .accent-bg-primary { background-color: var(--color-soft-purple); }
+        .accent-bg-secondary { background-color: var(--color-soft-peach); }
+        .script-font { font-family: 'Caveat', cursive; font-weight: 800; }
+        .card {
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 24px rgba(179, 156, 208, 0.3);
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 179, 154, 0.5); }
+
+        /* Custom style for active tab */
+        .tab-active {
+            filter: brightness(1.1);
+            box-shadow: 0 0 0 4px var(--color-soft-purple);
+        }
+        .tab-inactive:hover {
+            filter: brightness(0.95);
+        }
+        /* Style for the internal project list scrollbar */
+        .project-scroll-area {
+            max-height: 600px; /* Limits the height of the project list */
+            overflow-y: auto; /* Enables vertical scrolling */
+            padding-right: 1rem; /* Space for the scrollbar */
+        }
+        /* Ensure the summary card doesn't scroll with the projects */
+        .project-content-container {
+            padding: 1.5rem;
+        }
+        /* Responsive video embed wrapper for 16:9 ratio */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 accent-bg-primary shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#profile" class="text-2xl font-extrabold text-white script-font">Maria Navaz's Creative Portfolio</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#profile" class="text-white hover:text-secondary font-semibold transition duration-150">About</a>
+                    <a href="#education" class="text-white hover:text-secondary font-semibold transition duration-150">Education</a>
+                    <a href="#what-i-do" class="text-white hover:text-secondary font-semibold transition duration-150">Skills</a>
+                    <a href="#video-showcase" class="text-white hover:text-secondary font-semibold transition duration-150">Video</a>
+                    <a href="#gallery" class="text-white hover:text-secondary font-semibold transition duration-150">Projects</a>
+                    <a href="#certificates" class="text-white hover:text-secondary font-semibold transition duration-150">Certifications</a>
+                    <a href="#contact" class="text-white hover:text-secondary font-semibold transition duration-150">Contact Me</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+            <!-- 1. About Me (Profile) -->
+            <section id="profile" class="card bg-white p-8 md:p-12">
+                <div class="grid md:grid-cols-3 gap-10 items-center">
+                    <div class="flex-shrink-0 flex justify-center md:justify-start">
+                        <!-- FIX APPLIED: Changed classes to ensure a perfect square ratio for the profile photo. 
+                             ACTION NEEDED: Replace this placeholder with a direct link to a SQUARE (1:1) image for the best results. -->
+                        <img src="https://previews.dropbox.com/p/thumb/ACzd9TqdaCIaPjfzlZY3AfPeqg-2iHAEXP2dr_D-qtpw-CGu7f3Jsf3ZaSA1OJl8SX_FljSpidHnIY2zsrhxEnEZjdN4hQ7cLlvGuK8Que3F9sKXHsJ8Mu2l2sQSKB2I1T5KK_Iu0rcN3oziFb1-MYK5J8SPj5oNj_m4pNlXJs48h6WP4j8kGgql05PnbAkbu8Ab97uy_jikvErdAuxQOdfxgBY-YsrvgsgSVh69pZfF-dnTpJGs2PGF3ZA5RKtGHaiGgFF_3ilsalo_Tb7qivtODUn_xTsiDzKX9ob6ubLGxnjPAnEgpie1JPS5W5eMOh4/p.jpeg" 
+                             alt="Maria Navaz Profile Photo" class="w-100 h-100 aspect-square object-cover rounded-full border-4 border-soft-purple shadow-lg">
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="text-4xl script-font accent-primary mb-2">Hello, I'm</p>
+                        <h1 class="text-6xl md:text-8xl font-extrabold mb-4 accent-primary">Maria Navaz</h1>
+                        <p class="text-2xl font-light text-soft-peach mb-4">Event & Convention Management Graduate | Project Officer | MICE and Project Management</p>
+                        <p class="text-lg text-dark-text leading-relaxed">
+                            I began studying Event & Convention Management in 2020, and since then I’ve gained almost 5 years of hands-on experience as an event organizer. From creative workshops to corporate gatherings, I love turning concepts into experiences — managing chaos, connecting people, and learning something new from every event.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 2. Educational Background -->
+            <section id="education">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">Educational Background 🎓</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Degree -->
+                    <div class="card bg-white p-6 border-l-8 border-soft-purple">
+                        <p class="text-sm text-soft-peach font-semibold mb-1">July 2020 – September 2024</p>
+                        <h3 class="text-xl font-bold mb-2">Bachelor of Applied Science (BASc)</h3>
+                        <p class="text-lg">Event and Convention Management</p>
+                        <p class="text-sm text-bold-text"><strong>Sekolah Tinggi Pariwisata Bandung (NHI)</strong></p>
+                        <p class="text-sm text-light-text">The program gave me a strong foundation in both the creative and operational sides of event planning. With a GPA of 3.54, I also explored the MICE industry (Meeting, Incentive, Convention, Exhibition) which deepened my understanding of events.</p>
+                    </div>
+                    <!-- High School -->
+                    <div class="card bg-white p-6 border-l-8 border-soft-peach">
+                        <p class="text-sm text-soft-purple font-semibold mb-1">July 2017 – 2020</p>
+                        <h3 class="text-xl font-bold mb-2">Vocational High School Diploma</h3>
+                        <p class="text-lg">Tourism and Travel Management</p>
+                        <p class="text-sm text-light-text">SMK Baranangsiang Bogor</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. What I Do & Tools I Use (Skills) -->
+            <section id="what-i-do">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">My Expertise & Tools 🛠️</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Core Skills -->
+                    <div class="card accent-bg-secondary text-white p-6">
+                        <i class="fas fa-handshake text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Project & Event Strategy</h3>
+                        <ul class="space-y-2 font-light">
+                            <li class="flex items-start"><i class="fas fa-tasks mr-2 mt-1"></i> Project Management & Planning</li>
+                            <li class="flex items-start"><i class="fas fa-map-marker-alt mr-2 mt-1"></i> Venue Search & Logistics</li>
+                            <li class="flex items-start"><i class="fas fa-dollar-sign mr-2 mt-1"></i> Budget Research & Control</li>
+                            <li class="flex items-start"><i class="fas fa-calendar-check mr-2 mt-1"></i> End-to-End Execution</li>
+                        </ul>
+                    </div>
+                    <!-- Digital Skills (Creative) -->
+                    <div class="card accent-bg-primary text-white p-6">
+                        <i class="fas fa-bullhorn text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Creative & Social Assets</h3>
+                        <ul class="space-y-2 font-light">
+                            <li class="flex items-start"><i class="fas fa-palette mr-2 mt-1"></i> Graphic Design (Creative Briefing)</li>
+                            <li class="flex items-start"><i class="fas fa-share-alt mr-2 mt-1"></i> Social Media Management</li>
+                            <li class="flex items-start"><i class="fas fa-lightbulb mr-2 mt-1"></i> Visual Communication Leadership</li>
+                            <li class="flex items-start"><i class="fas fa-paint-roller mr-2 mt-1"></i> Adobe Illustrator & Photoshop</li>
+                        </ul>
+                    </div>
+                    <!-- Operational Skills -->
+                    <div class="card accent-bg-secondary text-white p-6">
+                        <i class="fas fa-clipboard-list text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Operational & Liaison</h3>
+                        <ul class="space-y-2 font-light">
+                            <li class="flex items-start"><i class="fas fa-users mr-2 mt-1"></i> Vendor & Internal Team Coordination</li>
+                            <li class="flex items-start"><i class="fas fa-user-shield mr-2 mt-1"></i> Stakeholder/VIP Protocol</li>
+                            <li class="flex items-start"><i class="fas fa-id-card mr-2 mt-1"></i> Registration & Attendance Tracking</li>
+                            <li class="flex items-start"><i class="fas fa-bus mr-2 mt-1"></i> Accommodation & Travel Logistics</li>
+                        </ul>
+                    </div>
+                    <!-- NEW Productivity Tools -->
+                    <div class="card accent-bg-primary text-white p-6">
+                        <i class="fas fa-desktop text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Productivity & Software</h3>
+                        <ul class="space-y-2 font-light">
+                            <li class="flex items-start"><i class="fas fa-image mr-2 mt-1"></i> Canva & CapCut (Basic Editing)</li>
+                            <li class="flex items-start"><i class="fab fa-google mr-2 mt-1"></i> Google Workspace & Onedrive (Sheets, Forms, Docs)</li>
+                            <li class="flex items-start"><i class="fas fa-file-excel mr-2 mt-1"></i> Microsoft Office (Excel, Word, PowerPoint)</li>
+                            <li class="flex items-start"><i class="fas fa-share-square mr-2 mt-1"></i> WhatsApp & Microsoft Teams (Communication)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Social Media Showcase -->
+            <section id="social">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">Social Media Showcase 📱</h2>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-sm card bg-gray-900 p-4 shadow-2xl relative rounded-3xl overflow-hidden border-8 border-gray-800">
+                        <!-- Phone Header -->
+                        <div class="flex justify-between items-center text-white mb-4">
+                            <span class="text-sm font-bold">9:41</span>
+                            <div class="w-10 h-1.5 bg-gray-800 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2"></div>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </diV>
+                        </div>
+
+                        <div class="accent-bg-primary p-4 rounded-2xl mb-4">
+                            <h3 class="text-white text-xl font-bold mb-2">My Social Strategy in Action</h3>
+                            <p class="text-sm text-gray-100">Showcasing visual storytelling and engagement strategies developed during my HIMA leadership and freelance roles.</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Mock Post 1 (Thematic) -->
+                            <div class="bg-white p-3 rounded-xl shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold text-sm">@Maria.Events</span>
+                                    <i class="fas fa-ellipsis-v text-gray-500"></i>
+                                </div>
+                                <!-- ACTION NEEDED: Replace this placeholder with a direct link to an example Instagram post/story image -->
+                                <img src="https://placehold.co/400x300/FFB39A/FFFFFF?text=Mood+Board+Post" alt="Social Media Content Example" class="w-full rounded-lg mb-2 border border-secondary/50">
+                                <p class="text-xs text-light-text font-semibold">1,200 Likes | **Caption:** Behind the scenes of the 'LIKE' Festival branding!</p>
+                            </div>
+                            <!-- Mock Post 2 (Metrics) -->
+                             <div class="bg-white p-3 rounded-xl shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold text-sm">Insights Summary</span>
+                                    <i class="fas fa-chart-line text-soft-purple"></i>
+                                </div>
+                                <p class="text-sm text-dark-text font-semibold">Campaign: Music Fest Teaser</p>
+                                <div class="flex justify-between mt-1 text-xs">
+                                    <span class="text-soft-purple font-bold">Reach: <span class="font-normal">5.8K</span></span>
+                                    <span class="text-soft-peach font-bold">Engagement Rate: <span class="font-normal">18.5%</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 5. Video Showcase (NEW SECTION) -->
+            <section id="video-showcase">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">Event Recap Videos 🎥</h2>
+                <p class="text-lg mb-6 text-light-text max-w-3xl mx-auto text-center">
+                    Demonstrating the atmosphere and scale of events through final edited video content.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Video 1 Placeholder -->
+                    <div class="card bg-white p-4">
+                        <h3 class="text-xl font-bold accent-primary mb-3">Event 1: [Video Title Here]</h3>
+                        <div class="video-container">
+                            <!-- 
+                                ACTION NEEDED: Replace the placeholder link below with your video's EMBED URL.
+                                For YouTube: Use the embed code (e.g., https://www.youtube.com/embed/VIDEO_ID)
+                            -->
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Event Recap Video 1">
+                            </iframe>
+                        </div>
+                        <p class="text-sm text-light-text mt-3">**Role in Recap:** [e.g., Creative Briefing, Footage Selection, Basic Editing (CapCut)].</p>
+                    </div>
+
+                    <!-- Video 2 Placeholder -->
+                    <div class="card bg-white p-4">
+                        <h3 class="text-xl font-bold accent-primary mb-3">Event 2: [Video Title Here]</h3>
+                        <div class="video-container">
+                            <!-- 
+                                ACTION NEEDED: Replace the placeholder link below with your video's EMBED URL.
+                            -->
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Event Recap Video 2">
+                            </iframe>
+                        </div>
+                        <p class="text-sm text-light-text mt-3">**Role in Recap:** [e.g., Managed Post-Production, Quality Control, Social Media Rollout].</p>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- 6. Project Gallery (Hub) -->
+            <section id="gallery">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">Project Gallery (2025 - 2021) 📁</h2>
+                
+                <!-- Year Tabs (Navigation) -->
+                <div class="grid md:grid-cols-5 gap-8 mb-10">
+                    
+                    <!-- Tab 2025 -->
+                    <button id="tab-2025" onclick="showYear('2025', this)" class="year-tab card accent-bg-primary hover:accent-bg-secondary text-white p-6 flex flex-col items-center text-center tab-active">
+                        <i class="fas fa-rocket text-4xl mb-3"></i>
+                        <h3 class="text-3xl font-extrabold script-font mb-1">2025</h3>
+                        <p class="text-sm font-light">E2E Strategy</p>
+                    </button>
+
+                    <!-- Tab 2024 -->
+                    <button id="tab-2024" onclick="showYear('2024', this)" class="year-tab card accent-bg-secondary hover:accent-bg-primary text-white p-6 flex flex-col items-center text-center tab-inactive">
+                        <i class="fas fa-handshake text-4xl mb-3"></i>
+                        <h3 class="text-3xl font-extrabold script-font mb-1">2024</h3>
+                        <p class="text-sm font-light">High-Profile Exec</p>
+                    </button>
+
+                    <!-- Tab 2023 -->
+                    <button id="tab-2023" onclick="showYear('2023', this)" class="year-tab card accent-bg-primary hover:accent-bg-secondary text-white p-6 flex flex-col items-center text-center tab-inactive">
+                        <i class="fas fa-user-tie text-4xl mb-3"></i>
+                        <h3 class="text-3xl font-extrabold script-font mb-1">2023</h3>
+                        <p class="text-sm font-light">Intern & Protocol</p>
+                    </button>
+                    
+                    <!-- Tab 2022 -->
+                    <button id="tab-2022" onclick="showYear('2022', this)" class="year-tab card accent-bg-secondary hover:accent-bg-primary text-white p-6 flex flex-col items-center text-center tab-inactive">
+                        <i class="fas fa-chalkboard-teacher text-4xl mb-3"></i>
+                        <h3 class="text-3xl font-extrabold script-font mb-1">2022</h3>
+                        <p class="text-sm font-light">Foundational Ldrshp</p>
+                    </button>
+
+                     <!-- Tab 2021 -->
+                    <button id="tab-2021" onclick="showYear('2021', this)" class="year-tab card accent-bg-primary hover:accent-bg-secondary text-white p-6 flex flex-col items-center text-center tab-inactive">
+                        <i class="fas fa-code-branch text-4xl mb-3"></i>
+                        <h3 class="text-3xl font-extrabold script-font mb-1">2021</h3>
+                        <p class="text-sm font-light">Early Organization</p>
+                    </button>
+                </div>
+
+                <!-- Detailed Project Content (Tabbed Area) -->
+                <div id="project-content-area" class="card bg-white p-6">
+
+                    <!-- 7A. 2025 Events (Latest Projects) -->
+                    <div id="content-2025" class="year-content">
+                        <h2 class="text-5xl font-extrabold mb-4 script-font accent-primary">2025 Events in Review 🚀</h2>
+                        
+                        <!-- 2025 Year Summary -->
+                        <div class="accent-bg-primary text-white p-8 mb-6 rounded-xl">
+                            <h3 class="text-3xl font-bold mb-4">E2E Management & Strategy at CTI Group (Feb 2025 - Present)</h3>
+                            <p class="text-lg font-light">
+                                **Summary:** Managed the full event lifecycle (ideation, execution, post-event evaluation) for **22+ events** across multiple tech subsidiaries (Jedi, BPT, MBT, CDT). This floating Event Organizer role demands extreme **flexibility, cross-functional coordination, and rapid adaptation** to diverse brand identities, target audiences, and C-level goals.
+                            </p>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold mb-4 script-font accent-primary">Featured 2025 Projects (22 Events)</h3>
+                        
+                        <!-- SCROLLABLE CONTAINER START -->
+                        <div class="project-scroll-area space-y-6">
+
+                            <!-- Project 1: C-Level Gatherings & Tech Workshops -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">CTI Group Strategic Gatherings & Tech Workshops</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Corporate/B2B | Status: On-going</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2025+CTI+Event" alt="CTI Group Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Marketing Event Organizer</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>**Led execution** of 22 events (C-level, workshops, product launches, networking, internal celebrations).</li>
+                                            <li>Managed vendor and venue selection and coordination across 5 subsidiary brands.</li>
+                                            <li>Directed the creative briefing process for all event collateral.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Ensured **consistent high execution standards** while delivering brand-specific engagement outcomes for each subsidiary in the holding group.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Dummy Project for Scroll Test -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">CTI Group - Thematic Networking Events</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Engagement/Internal | Status: On-going</p>
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=Thematic+Networking" alt="Thematic Networking Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Marketing Event Organizer</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Managed vendor selection for sport-based and internal team celebrations.</li>
+                                            <li>Coordinated logistics for specialized venues and activities.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully balanced formal corporate objectives with relaxed, engaging environments for internal and external stakeholders.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SCROLLABLE CONTAINER END -->
+                    </div>
+
+                    <!-- 7B. 2024 Event Projects -->
+                    <div id="content-2024" class="year-content hidden">
+                        <h2 class="text-5xl font-extrabold mb-4 script-font accent-primary">2024 Events in Review ✨</h2>
+
+                        <!-- 2024 Year Summary -->
+                        <div class="accent-bg-secondary text-white p-8 mb-6 rounded-xl">
+                            <h3 class="text-3xl font-bold mb-4">Contract and High-Profile Execution (May 2024 - Feb 2025)</h3>
+                            <p class="text-lg font-light">
+                                **Summary:** Executed projects for high-profile clients in the MICE sector (Genesia Convex) and corporate sector (F4Elements). Successfully managed 8+ key cultural, government, and corporate events, emphasizing **vendor coordination, budget control, and seamless end-to-end production** for major national and international brands.
+                            </p>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold mb-4 script-font accent-primary">Featured 2024 Projects (8 Events)</h3>
+                        
+                        <!-- SCROLLABLE CONTAINER START -->
+                        <div class="project-scroll-area space-y-6">
+
+                            <!-- Project 1: Genesia Convex High-Profile Events -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Genesia Convex - Major Public Events (6 Events)</h4>
+                                    <p class="text-sm text-light-text mb-4">Events: Billie Eilish Listening Party, Pegadaian Space Launch, Environmental Festivals</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2024+Public+Events" alt="Genesia Convex Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Project Officer (6 Months)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Oversaw end-to-end event execution for 6 major public and government events.</li>
+                                            <li>Managed client, vendor, and internal team coordination to ensure delivery on time and within scope/budget.</li>
+                                            <li>Key coordinator for the **Billie Eilish 'Hit Me Hard and Soft' Album Listening Indonesia**.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully managed complex logistics for high-sensitivity events (Hari Lingkungan Hidup, Pegadaian ceremony) and secured timely project delivery.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 2: F4Elements Corporate Events -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">F4Elements - Pertamina Corporate Workshops (2 Events)</h4>
+                                    <p class="text-sm text-light-text mb-4">Events: Internalisasi AKHLAK Fungsi Project Sumatera, Workshop Teknis RKAP Pertamina Hulu Energi</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2024+Pertamina+Workshop" alt="F4Elements Corporate Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Project Officer (3 Months)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Prepared pitch decks, gathered requirements, and coordinated vendors.</li>
+                                            <li>Assisted Strategic Planning team by researching rate cards for major pitches (OVO, Lazada, Mizone).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Provided critical support for two high-level government-affiliated corporate workshops, ensuring seamless execution.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SCROLLABLE CONTAINER END -->
+                    </div>
+
+                    <!-- 7C. 2023 Event Projects -->
+                    <div id="content-2023" class="year-content hidden">
+                        <h2 class="text-5xl font-extrabold mb-4 script-font accent-primary">2023 Events in Review 🌟</h2>
+
+                        <!-- 2023 Year Summary -->
+                        <div class="accent-bg-primary text-white p-8 mb-6 rounded-xl">
+                            <h3 class="text-3xl font-bold mb-4">Deep Internships, Liaison Protocol, and Creative Leadership</h3>
+                            <p class="text-lg font-light">
+                                **Summary:** Focused on intensive operational learning and high-stakes protocol, including a **7-month Project Officer Internship at Genesia Convex** supporting 5 major events and acting as **Artist Liaison Officer** for Miss Universe Indonesia Jawa Barat 2023. This year also concluded the term as **Head of Graphic Design** for HIMA.
+                            </p>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold mb-4 script-font accent-primary">Featured 2023 Projects (7 Events)</h3>
+
+                        <!-- SCROLLABLE CONTAINER START -->
+                        <div class="project-scroll-area space-y-6">
+
+                            <!-- Project 1: Genesia Convex Internship -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Genesia Convex - Project Officer Internship (5 Events)</h4>
+                                    <p class="text-sm text-light-text mb-4">Events: LIKE Fest 2023, Funwalk Hari Ozon, Pegadaian x BRI Gathering, Adiwiyata Awards, PPLH Gakkum Fest</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2023+Internship+Logistics" alt="Genesia Convex Internship Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Project Officer Intern (7 Months)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Supported planning and execution, including logistical arrangements and vendor coordination.</li>
+                                            <li>Contributed to **5 diverse events**, including a Ministerial Musyawarah Nasional.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Gained intensive, hands-on operational experience delivering complex environmental and VIP client engagement events.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2: Miss Universe Freelance -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Miss Universe Indonesia Jawa Barat 2023 (1 Event)</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Freelance / Protocol</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2023+Miss+Universe+Protocol" alt="Miss Universe Indonesia Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Artist Liaison Officer (1 Month)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Managed coordination and hospitality of **performing artists and VIPs**.</li>
+                                            <li>Ensured strict adherence to performance schedules and technical riders.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Facilitated seamless movement and preparedness of all talent for the high-pressure Grand Final event.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 3: HIMA Graphic Design Leadership (Conclusion) -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">HIMA Graphic Design Leadership (Ongoing until June 2023)</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Organizational Leadership</p>
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2023+Design+Leadership" alt="HIMA Graphic Design Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Head of Graphic Design</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Led creative team to transform verbal communication into visual designs (IG feeds, stories, templates).</li>
+                                            <li>Oversaw design workflow, quality control, and adherence to SOPs.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully led the creative division for over a year, ensuring brand consistency across all HIMA events.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SCROLLABLE CONTAINER END -->
+                    </div>
+
+                    <!-- 7D. 2022 Event Projects -->
+                    <div id="content-2022" class="year-content hidden">
+                        <h2 class="text-5xl font-extrabold mb-4 script-font accent-primary">2022 Events in Review 💡</h2>
+
+                        <!-- 2022 Year Summary -->
+                        <div class="accent-bg-secondary text-white p-8 mb-6 rounded-xl">
+                            <h3 class="text-3xl font-bold mb-4">Foundational Logistics, Creative Leadership, and Corporate Protocol</h3>
+                            <p class="text-lg font-light">
+                                **Summary:** This foundational year established core skills in logistics, protocol, and creative leadership. Highlights include roles as **Liaison Officer** for major corporate workshops (PT Patra Jasa/Pertamina, 2 events) and the NHI Graduation ceremony, and serving as the **Creative Division Steering Committee** for Inheal Fest 2022.
+                            </p>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold mb-4 script-font accent-primary">Featured 2022 Projects (4 Events)</h3>
+
+                        <!-- SCROLLABLE CONTAINER START -->
+                        <div class="project-scroll-area space-y-6">
+
+                            <!-- Project 1: Pertamina Liaison Work -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">PT Mitra Tours And Travel (Patra Jasa) - Corporate Workshops (2 Events)</h4>
+                                    <p class="text-sm text-light-text mb-4">Events: Workshop Reorganisasi & Pre-Workshop PPL 2023 (PT Kilang Pertamina International)</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2022+Pertamina+Logistics" alt="Patra Jasa Workshop Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Liaison Officer (2 x 1 Month Contracts)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Coordinated with banquet staff for meeting room setup (A/V, sound, screens).</li>
+                                            <li>Managed registration desk, attendance lists, and hotel accommodation check-in/out.</li>
+                                            <li>Facilitated swab antigen testing and distributed COVID kits/souvenirs.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Ensured seamless logistical flow and strict health protocol adherence for high-level corporate reorganization workshops.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 2: Creative Leadership (Inheal Fest 2022) -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Creative Event (CE) Inheal Fest 2022 (2 Roles)</h4>
+                                    <p class="text-sm text-light-text mb-4">Roles: Steering Committee (Creative), Registration Officer (Soundbath Class)</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2022+Inheal+Fest+Creative" alt="Inheal Fest Creative Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Steering Committee / Registration Officer</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Directed creation of event logo, master design, and all promotional assets.</li>
+                                            <li>Managed registration and check-in (Goers app barcode scanning) for the Soundbath Class.</li>
+                                            <li>Ensured accurate participant tracking for lucky draw and door prize sessions.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully managed dual roles, ensuring cohesive visual branding and smooth participant flow for the event's specialized classes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 3: NHI Graduation Ceremony -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Wisuda Politeknik Pariwisata NHI Bandung 2022</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Protocol / Academic Ceremony</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2022+Graduation" alt="NHI Graduation Ceremony Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Liaison Officer (1 Month)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Ensured accurate tracking of graduate attendance.</li>
+                                            <li>Guided graduates to assigned seats and provided timing information for diploma acceptance.</li>
+                                            <li>Addressed all graduate questions regarding the schedule and ceremony flow.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Facilitated a smooth and organized graduation ceremony for hundreds of participants, ensuring adherence to protocol.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 4: G-20 Side Events -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">G-20 Indonesia 2022: Tourism & Creative Economy Side Events</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Government Protocol / International</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2022+G20+Side+Event" alt="G20 Tourism Side Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Crew on Duty (1 Month)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Supported logistics for the launching of the G-20 side events by the Ministry of Tourism.</li>
+                                            <li>Ensured smooth flow and readiness for international stakeholders.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully managed duties during a high-profile international event with Ministerial involvement, demonstrating reliability under scrutiny.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SCROLLABLE CONTAINER END -->
+                    </div>
+                    
+                    <!-- 7E. 2021 Event Projects -->
+                    <div id="content-2021" class="year-content hidden">
+                        <h2 class="text-5xl font-extrabold mb-4 script-font accent-primary">2021 Events in Review 🌟</h2>
+
+                        <!-- 2021 Year Summary -->
+                        <div class="accent-bg-primary text-white p-8 mb-6 rounded-xl">
+                            <h3 class="text-3xl font-bold mb-4">Remote Coordination, Organizational Mentorship, and Foundational Creative Roles</h3>
+                            <p class="text-lg font-light">
+                                **Summary:** This year focused on developing remote event coordination (due to the online nature of many events) and foundational organizational skills. Highlights include acting as **Liaison Officer and IT Support** for an APTTTEN International Forum, **Student Mentor** for NHI, and crucial Creative Division roles for HIMA events (Vocalize, ENC, 90's MOTT).
+                            </p>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold mb-4 script-font accent-primary">Featured 2021 Projects (6 Events)</h3>
+
+                        <!-- SCROLLABLE CONTAINER START -->
+                        <div class="project-scroll-area space-y-6">
+
+                            <!-- Project 1: APTTTEN Forum -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">ASEAN Plus Three Tourism Training and Education Network (APTTTEN) Forum 2021</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: International Forum / Virtual</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2021+APTTTEN+Forum" alt="APTTTEN Forum Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Liaison Officer and IT Support (1 Month)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Managed **participant attendance, confirmation, and reminder distribution** (email/WhatsApp).</li>
+                                            <li>Served as moderator/timekeeper for presentations and Q&A sessions.</li>
+                                            <li>Managed technical documentation (recording sessions, screenshots).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Ensured seamless communication and technical flow for an international, multi-session virtual event.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2: HIMA Creative Roles -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">HIMA Creative Division Roles (Vocalize 2021)</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Creative / Promotional</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2021+Vocalize+Design" alt="Vocalize Event Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Member of Creative Division (Design Sub Division)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Translated event concepts into impactful visual designs (IG feeds, stories, campaign frames).</li>
+                                            <li>Collaborated with multiple divisions to fulfill all publication media requests.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Delivered cohesive visual branding that supported the promotion of HIMA's major student event.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 3: ENC Incubation Program -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-purple/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Incubation Program Enhaiipreneur Center (ENC) Batch 9</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Mentorship / Academic</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/B39CD0/FFFFFF?text=2021+ENC+Program" alt="ENC Incubation Program Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Divisi Acara (MC, Admin, Liaison Officer)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Served as **Master of Ceremonies (MC)**, ensuring strict adherence to the event agenda and schedule.</li>
+                                            <li>Managed administrative tasks (Zoom recording, participant muting, screen sharing).</li>
+                                            <li>Tracked attendance for coaches and participants as Liaison Officer.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Successfully handled multiple, overlapping roles essential for the smooth operation of the 3-month incubation program.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Project 4: Student Mentor -->
+                            <div class="grid md:grid-cols-2 gap-8 p-4 border-t-4 border-soft-peach/50">
+                                <div>
+                                    <h4 class="text-2xl font-bold accent-primary mb-2">Student Mentor, Mentoring Session 2021</h4>
+                                    <p class="text-sm text-light-text mb-4">Type: Mentorship / Academic</p>
+                                    <!-- Image Placeholder -->
+                                    <img src="https://placehold.co/600x400/FFB39A/333333?text=2021+Student+Mentor" alt="Student Mentor Photo" class="w-full h-48 object-cover rounded-xl mb-4 shadow-md">
+                                    <a href="[LINK TO DETAILED REPORT/PHOTOS]" target="_blank" class="text-sm text-soft-peach hover:underline font-semibold">View Documentation <i class="fas fa-external-link-alt ml-1"></i></a>
+                                </div>
+                                <div class="space-y-4">
+                                    <div><p class="font-bold text-lg text-soft-peach">Role: Student Mentor (2 Months)</p></div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Key Actions:</p>
+                                        <ul class="list-disc list-inside text-sm text-dark-text ml-4">
+                                            <li>Guided and supported fellow students on campus regulations and essential knowledge.</li>
+                                            <li>Assessed and evaluated participant behavior and grooming standards.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-soft-purple">Achievements/Metrics:</p>
+                                        <p class="text-sm text-dark-text">Helped foster a positive and professional campus experience for new students.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SCROLLABLE CONTAINER END -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 7. Certificates & Awards -->
+            <section id="certificates">
+                <h2 class="text-5xl font-extrabold mb-8 script-font accent-primary">Certificates, Honors & Leadership 🏅</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Honors and Awards -->
+                    <div class="card bg-white p-6 border-l-8 border-soft-peach">
+                        <h3 class="text-2xl font-bold accent-primary mb-4">Honors & Awards</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center"><i class="fas fa-medal text-soft-peach mr-2"></i> Excellent Internship Report</li>
+                            <li class="flex items-center"><i class="fas fa-medal text-soft-peach mr-2"></i> 1st Place Guiding Competition</li>
+                            <li class="flex items-center"><i class="fas fa-medal text-soft-peach mr-2"></i> Best Grooming Appreciation Award</li>
+                            <li class="flex items-center"><i class="fas fa-medal text-soft-peach mr-2"></i> Best Pupil Appreciation</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Organizational Leadership -->
+                    <div class="card accent-bg-secondary text-white p-6">
+                        <h3 class="text-2xl font-bold mb-4">Organizational Leadership</h3>
+                        <p class="font-bold mb-1">Head of Graphic Design (1 Year)</p>
+                        <p class="text-sm mb-4">HIMA Event & Convention Management</p>
+                        <ul class="space-y-2 text-sm font-light">
+                            <li><i class="fas fa-users mr-2"></i> Led creative team and provided design guidance.</li>
+                            <li><i class="fas fa-drafting-compass mr-2"></i> Oversaw visual strategy for all promotional materials.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Certifications (Scrollable) -->
+                    <div class="md:col-span-1 card bg-white p-6 border-l-8 border-soft-purple overflow-y-auto" style="max-height: 450px;">
+                        <h3 class="text-2xl font-bold accent-primary mb-4">14 Professional Certifications</h3>
+                        <div class="space-y-4">
+                            
+                            <p class="font-bold text-sm text-soft-purple">MICE Competency Certifications (5)</p>
+                            <ul class="space-y-3 text-sm border-b pb-4 border-soft-peach/50">
+                                <li>
+                                    <p class="font-semibold">Pengelolaan Resiko Event di Bidang MICE</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Pengelolaan dan Pelaksanaan Operasional Pameran di Bidang MICE</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Pengelolaan Creative Event di Bidang MICE</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Pengelolaan Incentive Travel di Bidang MICE</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Sertifikat Kompetensi Pemasaran Event di Bidang MICE</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                            </ul>
+                            
+                            <p class="font-bold text-sm text-soft-purple pt-2">Professional Development Certifications (9)</p>
+                            <ul class="space-y-3 text-sm">
+                                <li>
+                                    <p class="font-semibold">Certificate of Internship (Genesia Convex)</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Certificate of Internship (Panorama Leisure)</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Certified Professional Event Manager (CPEM)</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Digital Marketing Certification</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Project Management Basics (PMI)</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Certified ISO 20121 - Sustainable Events</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Advanced Crowd Management</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Financial Budgeting for Events</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                                <li>
+                                    <p class="font-semibold">Venue Management Certification</p>
+                                    <a href="[LINK_TO_CERTIFICATE_VERIFICATION_PAGE]" target="_blank" class="text-xs text-soft-peach hover:underline">View Credential <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- JavaScript for Tab Switching (MUST be here) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to handle tab switching
+            window.showYear = (year, clickedButton) => {
+                // 1. Hide all content areas
+                document.querySelectorAll('.year-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // 2. Show the selected content area
+                const selectedContent = document.getElementById('content-' + year);
+                if (selectedContent) {
+                    selectedContent.classList.remove('hidden');
+                }
+
+                // 3. Update active/inactive state of buttons (for visual feedback)
+                document.querySelectorAll('.year-tab').forEach(button => {
+                    button.classList.remove('tab-active');
+                    button.classList.add('tab-inactive');
+                });
+                clickedButton.classList.add('tab-active');
+                clickedButton.classList.remove('tab-inactive');
+            };
+
+            // Initialize: Ensure 2025 is shown on load (already set in HTML by default)
+        });
+    </script>
+    
+    <!-- Footer / Contact Me -->
+    <footer id="contact" class="accent-bg-secondary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-extrabold mb-4 script-font text-white">Let's Connect! 💌</h2>
+            <p class="text-white text-lg mb-10 font-light">I'm ready to bring creativity and organization to your next project.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Email -->
+                <div class="card bg-white p-6">
+                    <i class="fas fa-envelope text-4xl accent-primary mb-3"></i>
+                    <p class="font-bold text-xl mb-1">Email Me</p>
+                    <a href="mailto:marianavaz352@gmail.com" class="text-sm text-soft-peach hover:underline">marianavaz352@gmail.com</a>
+                </div>
+                <!-- LinkedIn -->
+                <div class="card bg-white p-6">
+                    <i class="fab fa-linkedin-in text-4xl accent-primary mb-3"></i>
+                    <p class="font-bold text-xl mb-1">Connect on LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/maria-navaz" target="_blank" class="text-sm text-soft-peach hover:underline">www.linkedin.com/in/maria-navaz</a>
+                </div>
+                <!-- Mobile -->
+                <div class="card bg-white p-6">
+                    <i class="fas fa-mobile-alt text-4xl accent-primary mb-3"></i>
+                    <p class="font-bold text-xl mb-1">Call Me</p>
+                    <p class="text-sm text-soft-peach">+628118469969</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-white opacity-75 mt-12">&copy; 2025 Maria Navaz. Designed with love and Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>
